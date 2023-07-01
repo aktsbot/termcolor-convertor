@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Terminal color convertor</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Terminal color convertor</h1>
+
+    <div style="display: flex">
+      <div style="padding: 10px">
+        <h2>Input</h2>
+        <select style="display: block">
+          <option value="xresources">Xresources</option>
+        </select>
+        <textarea rows="30" cols="50"></textarea>
+      </div>
+
+      <div style="padding: 10px">
+        <h2>Output</h2>
+        <div>
+          <select>
+            <option value="foot">Foot</option>
+            <option value="alacritty">Alacritty</option>
+          </select>
+          <button>Convert</button>
+        </div>
+        <textarea disabled rows="30" cols="50"></textarea>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
