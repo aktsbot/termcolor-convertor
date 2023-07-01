@@ -15,3 +15,14 @@
 *color14:    #e59400
 *color15:    #00cc00
 
+urxvt.cursorBlink: false
+urxvt.cursorColor: #ff8939
+urxvt.cursorColor2: #121212
+urxvt.colorBD: #857672
+urxvt.colorIT: #bbbbbb
+urxvt.colorUL: #999999
+
+URxvt*foreground: #665c64
+URxvt*background: #121212
+
+

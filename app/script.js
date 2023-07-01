@@ -124,11 +124,21 @@ function processLine(line) {
     var num = parseInt(keySplits[1]);
     if (num < 8) {
       _key = "regular" + keySplits[1];
-    } else {
+    } else if (num >= 8) {
       _key = "bright" + (num % 8);
+    } else {
+      // special colors
+      if (keySplits[0].includes("foreground")) {
+        _key = "foreground";
+      } else if (keySplits[0].includes("background")) {
+        _key = "background";
+      }
     }
-    var _value = value.replace("#/g", "");
-    output[_key] = _value;
+
+    if (_key) {
+      var _value = value.replace("#/g", "");
+      output[_key] = _value;
+    }
   } else if (outputType == "alacritty") {
     // TODO:
   }
