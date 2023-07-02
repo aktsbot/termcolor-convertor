@@ -29,8 +29,12 @@ convertBtn.addEventListener("click", function () {
 
   // now we make the object into a line
   var outputLines = "";
-  for (const [k, v] of Object.entries(output)) {
-    outputLines += `${k}: ${v}\n`;
+  var outputType = outputSelect.value;
+
+  if (outputType == "foot") {
+    for (const [k, v] of Object.entries(output)) {
+      outputLines += `${k}=${v}\n`;
+    }
   }
 
   outputTA.value = outputLines;
@@ -93,7 +97,7 @@ function getDefaultLines() {
       } else {
         _key = "bright" + (num % 8);
       }
-      var _value = value.replace("#/g", "");
+      var _value = value.replace("#", "");
       output[_key] = _value;
     } else if (outputType == "alacritty") {
       // TODO:
@@ -136,7 +140,7 @@ function processLine(line) {
     }
 
     if (_key) {
-      var _value = value.replace("#/g", "");
+      var _value = value.replace("#", "");
       output[_key] = _value;
     }
   } else if (outputType == "alacritty") {
